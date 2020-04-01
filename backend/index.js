@@ -18,6 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
+
+//tentativa sem sucesso de conserto do erro socket.io e cors...
 io.origins((origin, callback) => {
   if (origin !== "http://localhost:3000") {
     return callback("origin not allowed", false);
